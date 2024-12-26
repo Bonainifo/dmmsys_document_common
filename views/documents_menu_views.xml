@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Top menu / dashboard icon -->
+    <menuitem name="Documents" id="dmmsys_document_common.menu_root" groups="dmmsys_document_common.group_documents_user" web_icon="documents,static/description/icon.png" sequence="65"/>
+
+    <!-- Top bar menus -->
+    <menuitem name="Documents"
+        id="dmmsys_document_common.dashboard"
+        parent="dmmsys_document_common.menu_root"
+        action="document_action"
+        groups="dmmsys_document_common.group_documents_user"
+        sequence="0"/>
+    <menuitem name="Configuration"
+        id="dmmsys_document_common.Config"
+        parent="dmmsys_document_common.menu_root"
+        groups="dmmsys_document_common.group_documents_manager"
+        sequence="10"/>
+
+    <menuitem name="Settings"
+        id="dmmsys_document_common.settings_menu"
+        parent="dmmsys_document_common.Config"
+        action="configuration_action"
+        groups="base.group_system"
+        sequence="10"/>
+    <menuitem name="Email Aliases"
+        id="dmmsys_document_common.mail_alias_menu"
+        parent="dmmsys_document_common.Config"
+        action="mail_alias_action"
+        groups="dmmsys_document_common.group_documents_manager"
+        sequence="30"/>
+
+    <menuitem name="Structure"
+        id="dmmsys_document_common.structure"
+        parent="dmmsys_document_common.Config"
+        groups="dmmsys_document_common.group_documents_manager"
+        sequence="40"/>
+
+    <menuitem name="Tags"
+        id="dmmsys_document_common.category_menu"
+        parent="dmmsys_document_common.structure"
+        action="tag_action"
+        sequence="10"/>
+
+    <menuitem name="Activities"
+        id="dmmsys_document_common.mail_activities"
+        parent="dmmsys_document_common.Config"
+        groups="dmmsys_document_common.group_documents_manager"
+        sequence="50"/>
+
+    <menuitem name="Activity Types"
+        id="dmmsys_document_common.mail_activity_type_menu"
+        parent="dmmsys_document_common.mail_activities"
+        action="mail_activity_type_action_document"
+        sequence="10"/>
+    <menuitem name="Activity Plans"
+        id="dmmsys_document_common.mail_activity_plan_menu"
+        parent="dmmsys_document_common.mail_activities"
+        action="mail_activity_plan_action_document"
+        sequence="20"/>
+</odoo>
