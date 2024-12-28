@@ -226,12 +226,19 @@ class Document(models.Model):
             return False
 
     def _get_models(self, domain):
+        """
+        Return the names of the models to which the attachments are attached.
 
+        :param domain: the domain of the _read_group on documents.
+        :return: a list of model data, the latter being a dict with the keys
+            'id' (technical name),
+            'name' (display name) and
+            '__count' (how many attachments with that domain).
+        """
         not_a_file = []
         not_attached = []
         models = []
         groups = self._read_group(domain, ['res_model'], ['__count'])
-        import pdb;pdb.set_trace()
         for res_model, count in groups:
             if not res_model:
                 not_a_file.append({
