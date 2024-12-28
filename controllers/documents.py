@@ -436,7 +436,11 @@ class ShareRoute(http.Controller):
                 documents = self._create_uploaded_documents(request.httprequest.files.getlist('files'), share, folder)
             except Exception:
                 logger.exception("Failed to upload document")
-
+            else:
+                for document in documents:
+                    document.message_post(body=chatter_message)
+                if share.activity_option:
+                    documents.documents_set_activity(settings_record=share)
         else:
             return http.request.not_found()
         return Markup("""<script type='text/javascript'>
