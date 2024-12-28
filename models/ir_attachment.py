@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+####################################################################################
+#                                                                                  #
+# Copyright (C) 2016~2025 Dmmsys <guoyihot@outlook.com> Guobower<124358678@qq.com>##
+# All Rights Reserved                                                              #
+#  Shanghai Hengzao                                                                #
+####################################################################################
 
 import base64
 import io
@@ -60,11 +66,11 @@ class IrAttachment(models.Model):
         res_model = vals.get('res_model')
         res_id = vals.get('res_id')
         model = self.env.get(res_model)
-        if model is not None and res_id and issubclass(self.pool[res_model], self.pool['documents.mixin']):
+        if model is not None and res_id and issubclass(type(model), self.pool['documents.mixin']):
             vals_list = [
                 model.browse(res_id)._get_document_vals(attachment)
                 for attachment in self
-                if not attachment.res_field and model.browse(res_id)._check_create_documents()
+                if not attachment.res_field
             ]
             vals_list = [vals for vals in vals_list if vals]  # Remove empty values
             self.env['documents.document'].create(vals_list)

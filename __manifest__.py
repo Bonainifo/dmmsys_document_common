@@ -1,21 +1,28 @@
 # -*- coding: utf-8 -*-
+####################################################################################
+#                                                                                  #
+# Copyright (C) 2016~2025 Dmmsys <guoyihot@outlook.com> Guobower<124358678@qq.com>##
+# All Rights Reserved                                                              #
+#  Shanghai Hengzao                                                                #
+####################################################################################
 {
-    'name': "Dmmsys Document Common",
+    'name': "Dmmys Document Common",
 
-    'summary': "Dmmsys Document Common",
+    'summary': "Dmmys Document management",
 
     'description': """
 App to upload and manage your documents.
     """,
 
+    'author': "Odoo",
     'category': 'Productivity/Documents',
     'sequence': 80,
-    'version': '1.4',
+    'version': '1.3',
     'application': True,
     'website': 'https://www.odoo.com/app/documents',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'mail', 'portal',  'attachment_indexation', 'digest'],
+    'depends': ['base', 'mail', 'portal', 'attachment_indexation', 'digest'],
 
     # always loaded
     'data': [
@@ -23,30 +30,33 @@ App to upload and manage your documents.
         'security/ir.model.access.csv',
         'data/digest_data.xml',
         'data/mail_template_data.xml',
-        'data/mail_activity_type_data.xml',
-        'data/documents_tag_data.xml',
-        'data/documents_document_data.xml',
+
+        #'data/documents_folder_data.xml',
+        #'data/documents_category_data.xml',
+        #'data/documents_tag_data.xml',
+        #'data/documents_share_data.xml',
+
+        #'data/documents_workflow_data.xml',
+        'data/ir_asset_data.xml',
         'data/ir_config_parameter_data.xml',
-        'data/documents_tour.xml',
         'views/res_config_settings_views.xml',
         'views/res_partner_views.xml',
-        'views/documents_access_views.xml',
         'views/documents_document_views.xml',
+        'views/documents_category_views.xml',
         'views/documents_folder_views.xml',
+        'views/documents_share_views.xml',
         'views/documents_tag_views.xml',
-        'views/mail_activity_views.xml',
-        'views/mail_activity_plan_views.xml',
-        'views/mail_alias_views.xml',
+        'views/documents_workflow_action_views.xml',
+        'views/documents_workflow_rule_views.xml',
+
         'views/documents_menu_views.xml',
-        'views/documents_templates_portal.xml',
         'views/documents_templates_share.xml',
         'wizard/documents_link_to_record_wizard_views.xml',
         'wizard/documents_request_wizard_views.xml',
-        # Need the `ir.actions.act_window` to exist
-        'data/ir_actions_server_data.xml',
     ],
 
     'demo': [
+        'demo/documents_folder_demo.xml',
         'demo/documents_document_demo.xml',
     ],
     'license': 'OEEL-1',

@@ -9,7 +9,7 @@ import { user } from "@web/core/user";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { utils as uiUtils } from "@web/core/ui/ui_service";
 import { Component, onWillStart, useState } from "@odoo/owl";
-import { toggleArchive } from "@dmmsys_document_common/views/hooks";
+import { toggleArchive } from "@dmmsys_document_basic/views/hooks";
 
 const VALUE_SELECTOR = [".o_search_panel_category_value", ".o_search_panel_filter_value"].join();
 const FOLDER_VALUE_SELECTOR = ".o_search_panel_category_value";
@@ -63,7 +63,7 @@ export class DocumentsSearchPanel extends SearchPanel {
         this.dialog = useService("dialog");
 
         onWillStart(async () => {
-            this.isDocumentManager = await user.hasGroup("dmmsys_document_common.group_documents_manager");
+            this.isDocumentManager = await user.hasGroup("dmmsys_document_basic.group_documents_manager");
             const selectedFolderId = this.env.searchModel.getSelectedFolderId();
             if (selectedFolderId) {
                 this._expandFolder({ folderId: selectedFolderId });

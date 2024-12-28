@@ -8,7 +8,8 @@
         <field name="arch" type="xml">
             <xpath expr="//form" position="inside">
                 <app data-string="Documents" string="Documents" name="documents" groups="dmmsys_document_common.group_documents_manager" notApp="1">
-                    <block title="Trash Management">
+                    <h2>Files Centralization</h2>
+                    <block>
                         <setting id="deletion_delay" string="Deletion delay (days)" help="Set deletion delay for documents in the Trash">
                             <div class="content-group">
                                 <div class="row mt16">
@@ -17,7 +18,6 @@
                             </div>
                         </setting>
                     </block>
-                    <block title="Files Centralization" id="files_centralization_section"/>
                 </app>
             </xpath>
         </field>
@@ -28,7 +28,7 @@
         <field name="res_model">res.config.settings</field>
         <field name="view_mode">form</field>
         <field name="target">inline</field>
-        <field name="context">{'module': 'general_settings', 'bin_size': False}</field>
+        <field name="context" eval="{'module': 'general_settings', 'bin_size': False}"/>
     </record>
 
     <record id="configuration_action" model="ir.actions.act_window">

@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+####################################################################################
+#                                                                                  #
+# Copyright (C) 2016~2025 Dmmsys <guoyihot@outlook.com> Guobower<124358678@qq.com>##
+# All Rights Reserved                                                              #
+#  Shanghai Hengzao                                                                #
+####################################################################################
 
 from odoo import fields, models
 
@@ -7,7 +12,7 @@ from odoo import fields, models
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    deletion_delay = fields.Integer(config_parameter="documents.deletion_delay", default=30,
+    deletion_delay = fields.Integer(config_parameter="dmmsys_document_common.deletion_delay", default=30,
                                     help='Delay after permanent deletion of the document in the trash (days)')
 
     _sql_constraints = [

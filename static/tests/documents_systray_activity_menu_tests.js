@@ -5,14 +5,14 @@ import { start } from "@mail/../tests/helpers/test_utils";
 import { patchWithCleanup } from "@web/../tests/helpers/utils";
 import { click, contains } from "@web/../tests/utils";
 
-QUnit.module("documents", {}, function () {
+QUnit.module("dmmsys_document_basic", {}, function () {
     QUnit.module("documents_systray_activity_menu_tests.js");
 
     QUnit.test("activity menu widget: documents request button", async function (assert) {
         const { env } = await start();
         patchWithCleanup(env.services.action, {
             doAction(action) {
-                assert.strictEqual(action, "dmmsys_document_common.action_request_form");
+                assert.strictEqual(action, "dmmsys_document_basic.action_request_form");
             },
         });
         await click(".o_menu_systray i[aria-label='Activities']");
