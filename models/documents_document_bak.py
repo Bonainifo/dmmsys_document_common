@@ -125,7 +125,7 @@ class Document(models.Model):
 
     # Folder = parent document
     parent_path = fields.Char(index=True)  # see '_parent_store' implementation in the ORM for details
-    folder_id = fields.Many2one('documents.document', string="Parent Folder", ondelete="set null", tracking=True,
+    folder_id = fields.Many2one('document.folder', string="Parent Folder", ondelete="set null", tracking=True,
                                 domain="[('type', '=', 'folder'), ('shortcut_document_id', '=', False)]",
                                 required=False, index=True)
     children_ids = fields.One2many('documents.document', 'folder_id')
