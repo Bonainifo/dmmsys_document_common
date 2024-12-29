@@ -7,6 +7,6 @@ import { patch } from "@web/core/utils/patch";
 patch(ActivityMenu.prototype, {
     async onClickRequestDocument() {
         this.dropdown.close();
-        this.env.services.action.doAction("dmmsys_document_common.action_request_form");
+        this.env.services.action.doAction("documents.action_request_form");
     },
 });

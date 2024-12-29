@@ -8,8 +8,8 @@ import { escape } from "@web/core/utils/strings";
 import { memoize } from "@web/core/utils/functions";
 import { useSetupAction } from "@web/search/action_hook";
 import { formatFloat } from "@web/views/fields/formatters";
-import { DocumentsPermissionPanel } from "@dmmsys_document_common/components/documents_permission_panel/documents_permission_panel";
-import { PdfManager } from "@dmmsys_document_common/owl/components/pdf_manager/pdf_manager";
+import { DocumentsPermissionPanel } from "@documents/components/documents_permission_panel/documents_permission_panel";
+import { PdfManager } from "@documents/owl/components/pdf_manager/pdf_manager";
 import { EventBus, onMounted, onWillStart, markup, useComponent, useEnv, useRef, useSubEnv } from "@odoo/owl";
 
 /**
@@ -149,7 +149,7 @@ export function useDocumentView(helpers) {
     });
     onWillStart(async () => {
         component.maxUploadSize = await loadMaxUploadSize(null, orm);
-        component.isDocumentsManager = await user.hasGroup("dmmsys_document_common.group_documents_manager");
+        component.isDocumentsManager = await user.hasGroup("documents.group_documents_manager");
     });
 
     onMounted(async() => {
@@ -180,7 +180,7 @@ export function useDocumentView(helpers) {
         userIsInternal: documentService.userIsInternal,
         // Listeners
         onClickDocumentsRequest: () => {
-            action.doAction("dmmsys_document_common.action_request_form", {
+            action.doAction("documents.action_request_form", {
                 additionalContext: {
                     default_partner_id: props.context.default_partner_id || false,
                     default_folder_id:

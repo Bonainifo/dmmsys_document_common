@@ -1,5 +1,5 @@
 import { ControlPanel } from "@web/search/control_panel/control_panel";
-import { DocumentsBreadcrumbs } from "@dmmsys_document_common/components/documents_breadcrumbs";
+import { DocumentsBreadcrumbs } from "@documents/components/documents_breadcrumbs";
 import { DocumentsCogMenu } from "../cog_menu/documents_cog_menu";
 import { useState } from "@odoo/owl";
 import { useService, useBus } from "@web/core/utils/hooks";
@@ -7,7 +7,7 @@ import { _t } from "@web/core/l10n/translation";
 import { download } from "@web/core/network/download";
 import { serializeDate } from "@web/core/l10n/dates";
 const { DateTime } = luxon;
-import { toggleArchive, openDeleteConfirmationDialog } from "@dmmsys_document_common/views/hooks";
+import { toggleArchive, openDeleteConfirmationDialog } from "@documents/views/hooks";
 import { browser } from "@web/core/browser/browser";
 
 // TODO: clean

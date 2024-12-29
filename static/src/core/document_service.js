@@ -58,8 +58,8 @@ export class DocumentService {
 
     async start() {
         this.userIsInternal = await user.hasGroup("base.group_user");
-        this.userIsDocumentManager = await user.hasGroup("dmmsys_document_common.group_documents_manager");
-        this.userIsDocumentUser = await user.hasGroup("dmmsys_document_common.group_documents_user");
+        this.userIsDocumentManager = await user.hasGroup("documents.group_documents_manager");
+        this.userIsDocumentUser = await user.hasGroup("documents.group_documents_user");
     }
 
     /**

@@ -1,6 +1,6 @@
 /** @odoo-module **/
 
-import { preSuperSetup, useDocumentView } from "@dmmsys_document_common/views/hooks";
+import { preSuperSetup, useDocumentView } from "@documents/views/hooks";
 import { onMounted, useRef, useState } from "@odoo/owl";
 import { useService } from "@web/core/utils/hooks";
 import { KanbanController } from "@web/views/kanban/kanban_controller";

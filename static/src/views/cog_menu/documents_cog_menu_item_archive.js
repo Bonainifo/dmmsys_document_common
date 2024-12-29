@@ -1,6 +1,6 @@
 import { STATIC_COG_GROUP_ACTION_CLEANUP } from "./documents_cog_menu_group";
 import { DocumentsCogMenuItem } from "./documents_cog_menu_item";
-import { toggleArchive } from "@dmmsys_document_common/views/hooks";
+import { toggleArchive } from "@documents/views/hooks";
 import { _t } from "@web/core/l10n/translation";
 
 export class DocumentsCogMenuItemArchive extends DocumentsCogMenuItem {

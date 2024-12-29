@@ -3,7 +3,7 @@
 import { _t } from "@web/core/l10n/translation";
 import { ActivityController } from "@mail/views/web/activity/activity_controller";
 
-import { preSuperSetup, useDocumentView } from "@dmmsys_document_common/views/hooks";
+import { preSuperSetup, useDocumentView } from "@documents/views/hooks";
 import { useState } from "@odoo/owl";
 
 export class DocumentsActivityController extends ActivityController {

@@ -2,7 +2,7 @@
 
 import { ListController } from "@web/views/list/list_controller";
 import { _t } from "@web/core/l10n/translation";
-import { openDeleteConfirmationDialog, preSuperSetup, useDocumentView } from "@dmmsys_document_common/views/hooks";
+import { openDeleteConfirmationDialog, preSuperSetup, useDocumentView } from "@documents/views/hooks";
 import { useRef, useState } from "@odoo/owl";
 
 export class DocumentsListController extends ListController {

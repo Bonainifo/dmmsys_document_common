@@ -1,7 +1,7 @@
 /** @odoo-module **/
 
-import { PdfGroupName } from "@dmmsys_document_common/owl/components/pdf_group_name/pdf_group_name";
-import { PdfPage } from "@dmmsys_document_common/owl/components/pdf_page/pdf_page";
+import { PdfGroupName } from "@documents/owl/components/pdf_group_name/pdf_group_name";
+import { PdfPage } from "@documents/owl/components/pdf_page/pdf_page";
 import { loadPDFJSAssets } from "@web/libs/pdfjs";
 import { useCommand } from "@web/core/commands/command_hook";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
@@ -12,7 +12,7 @@ import { useActiveElement } from "@web/core/ui/ui_service";
 import { uniqueId } from "@web/core/utils/functions";
 import { useService } from "@web/core/utils/hooks";
 
-import { ExitSplitToolsDialog } from "@dmmsys_document_common/owl/components/pdf_exit_dialog/pdf_exit_dialog";
+import { ExitSplitToolsDialog } from "@documents/owl/components/pdf_exit_dialog/pdf_exit_dialog";
 
 import { Component, onWillStart, toRaw, useRef, useState, useEffect } from "@odoo/owl";
 

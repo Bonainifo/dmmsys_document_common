@@ -4,7 +4,7 @@ import { FormController } from '@web/views/form/form_controller';
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { useService } from "@web/core/utils/hooks";
 import { _t } from "@web/core/l10n/translation";
-import { preSuperSetupFolder } from "@dmmsys_document_common/views/hooks";
+import { preSuperSetupFolder } from "@documents/views/hooks";
 
 export class FolderFormController extends FormController {
     setup() {
